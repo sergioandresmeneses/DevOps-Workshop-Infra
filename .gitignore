@@ -1,0 +1,7 @@
+#Vagrant custom config file
+.vagrant/
+log-file.txt
+*.log
+DevOps-Workshop-App/
+vagrant
+ubuntu*

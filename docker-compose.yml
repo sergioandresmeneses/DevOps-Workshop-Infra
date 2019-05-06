@@ -1,0 +1,36 @@
+version: "2.0"
+services:
+ datacontainer:
+  image: server-data
+  container_name: datacontainer
+ jenkins:
+  depends_on:
+   - datacontainer
+  image: jenkins-master
+  ports:
+   - "8080:8080"
+  volumes:
+   - /var/run/docker.sock:/var/run/docker.sock
+  volumes_from:
+   - datacontainer
+  networks:
+   - jenkinsnetV
+  container_name: jenkins
+  restart: always
+ 
+ app-qa:
+  image: nginx-app:qa
+  ports:
+   - "8220:80"
+  container_name: app-qa
+  restart: always
+
+ app-prod:
+  image: nginx-app:prod
+  ports:
+   - "8320:80"
+  container_name: app-prod
+  restart: always
+
+networks:
+ jenkinsnetV:
