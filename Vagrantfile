@@ -7,8 +7,10 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
+  #config.vm.box = "devops-workshop"
   config.vm.provider :virtualbox do |vb|
         vb.name = "jenkins-vagrant"
+        vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
 # Jenkin's Ports
   config.vm.network "forwarded_port", guest: 8080, host: 8080
