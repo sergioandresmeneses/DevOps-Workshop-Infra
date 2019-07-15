@@ -1,7 +1,7 @@
 # DevOps-Workshop-Infra
 
 This is the official repo for the DevOps Workshop platform.
-*The slides used are included in this repo [here](https://github.com/sergioandresmeneses/DevOps-Workshop-Infra/blob/master/Docs/slides.pdf)*
+*The slides used are included in this repo [here](Docs/workshop-slides.pdf)*
 
 ## Getting Started
 
